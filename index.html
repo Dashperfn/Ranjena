@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Ranjena</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <audio id="bg-music">
+    <source src="assets/lagu/Something.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="petals" id="petals-container"></div>
+
+  <div id="cover-screen" onclick="showPopup()">
+    <div class="gift-box" id="gift-icon">🤍</div>
+    <div class="tap-text" id="tap-text">A little surprise</div>
+  </div>
+
+  <div id="popup-overlay" class="hidden">
+    <div id="popup-box">
+      <h3 class="serif">You sure mau dibuka ran?</h3>
+      <div class="popup-buttons">
+        <button id="btn-yes" class="popup-btn" onclick="confirmOpenGift()">Open</button>
+        <button id="btn-no" class="popup-btn">Skip</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="main-content" style="display:none; opacity:0;">
+
+    <!-- Music player -->
+    <div class="music-widget">
+      <div class="music-top">
+        <div class="music-info">
+          <span class="title" id="player-title">Something</span>
+          <span class="artist" id="player-artist">The Beatles</span>
+        </div>
+        <img id="player-cover" src="Ranjena2.jpg" alt="Cover" style="width:80px; height:80px; border-radius:8px; margin-left:15px;">
+      </div>
+
+      <div class="progress-wrapper">
+        <input type="range" id="seek-bar" value="0" min="0" max="100" step="0.1">
+        <div class="time-display">
+          <span id="current-time">0:00</span>
+          <span id="duration">0:00</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <span onclick="prevSong()">⏮</span>
+        <span id="play-pause-btn" onclick="toggleMusic()">▶</span>
+        <span onclick="nextSong()">⏭</span>
+      </div>
+    </div>
+
+    <!-- Hero section -->
+    <section class="hero-section">
+      <p class="subtitle">Ucapan terimakasih</p>
+      <h1 class="title-main serif">Untuk</h1>
+      <h1 class="title-main serif">Ranjena</h1>
+      <img src="Ranjena1.jpg" alt="Portrait of Ranjena" style="width:160px; height:160px; object-fit:cover; border-radius:50%; border:3px solid rgba(255,255,255,0.2); box-shadow:0 0 25px rgba(229,115,115,0.4); margin-bottom:25px;">
+      <p class="text-body" style="margin-top:10px;">Setiap kelopak bunga adalah betapa berharganya lu.</p>
+      <div style="font-size:24px; margin-top:20px;">🌸</div>
+      <button class="next-btn" onclick="nextSection(this)">🤍</button>
+    </section>
+
+    <!-- Playlist -->
+    <section>
+      <p class="subtitle">Your melodies</p>
+      <h2 class="title-sub serif">Lagu about yu</h2>
+      <p class="subtitle">klik cover/icon buat ganti lagu</p>
+      <div class="playlist-grid">
+
+        <div class="photo-item" onclick="changeSong('Something.mp3','Something','The Beatles','Ranjena2.jpg')">
+          <img src="Ranjena2.jpg" alt="Something">
+          <p class="photo-caption">Something</p>
+          <p style="font-size:11px; color:var(--text-muted);">The Beatles</p>
+        </div>
+
+        <div class="photo-item" onclick="changeSong('countonme.mp3','Count on Me','Bruno Mars','Ranjena3.jpg')">
+          <img src="Ranjena3.jpg" alt="Count on Me">
+          <p class="photo-caption">Count on Me</p>
+          <p style="font-size:11px; color:var(--text-muted);">Bruno Mars</p>
+        </div>
+
+        <div class="photo-item" onclick="changeSong('morethanawoman.mp3','More Than A Woman','Bee Gees','Ranjena4.jpg')">
+          <img src="Ranjena4.jpg" alt="More Than A Woman">
+          <p class="photo-caption">More Than A Woman</p>
+          <p style="font-size:11px; color:var(--text-muted);">Bee Gees</p>
+        </div>
+
+      </div>
+      <button class="next-btn" onclick="nextSection(this)">🤍</button>
+    </section>
+
+    <!-- From my heart -->
+    <section>
+      <p class="subtitle"></p>
+      <h2 class="title-sub serif">You are my<br>best friend<br>Ranjena.</h2>
+      <p class="text-body">
+        The way you sing, the way you care, the way you simply exist — it fills every corner of my world with something I never knew I needed.<br><br>
+        These flowers are not enough. No words ever could be. But they carry every unspoken words for you.<br><br> Thank you Ranjena.
+      </p>
+      <p class="serif" style="margin-top:40px; font-style:italic; font-size:24px; color:var(--text-muted);">
+        - Kara -
+      </p>
+      <button class="next-btn" onclick="nextSection(this)">🤍</button>
+    </section>
+
+    <!-- Letter -->
+    <section>
+      <p class="subtitle">a letter for you</p>
+      <h2 class="title-sub serif">Ranjena</h2>
+      <div style="background:rgba(255,255,255,0.03); border-left:3px solid var(--accent); padding:30px 40px; margin-top:20px; max-width:600px; border-radius:0 15px 15px 0; box-shadow:5px 5px 20px rgba(0,0,0,0.2);">
+        <p class="serif" style="font-size:24px; font-style:italic; line-height:1.8; color:#fff;">
+          "Semoga sehat selalu, happy selalu, lancar harinya. sorry gua gak bisa kasih lu something yang mahal or anything, but you're my best fambest i ever have in rp, thanks for anything Ranjena. Once again sorry idk how to tell you gak bisa berkata kata gua"
+        </p>
+      </div>
+      <button class="next-btn" onclick="nextSection(this)">🎵
+              <p class="text-body" style="font-size:14px; margin-top:25px;">Good night.</p>
+    </section>
+
+    <!-- Final section -->
+    <section>
+      <div style="font-size:28px; letter-spacing:10px; margin-bottom:20px;">🌸🌺🌹</div>
+      <p class="subtitle">always & forever</p>
+      <h1 class="title-sub serif">Be my Fambest</h1>
+      <p class="text-body" style="font-size:14px; max-width:600px;">
+        You deserve the world. You deserve all the flowers. You deserve everything.
+      </p>
+      <p class="serif" style="margin-top:50px; font-style:italic; color:var(--text-muted); font-size:18px;">
+        - Kara not Ferry?
+      </p>
+    </section>
+
+  </div> <!-- end main-content -->
+
+  <script src="script.js"></script>
+</body>
+</html>
