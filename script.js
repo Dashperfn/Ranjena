@@ -1,4 +1,3 @@
-```javascript
 const audio = document.getElementById("bg-music");
 const seekBar = document.getElementById("seek-bar");
 const currentTimeEl = document.getElementById("current-time");
@@ -560,4 +559,3 @@ document.querySelectorAll("section")
 
 createPetals();
 updatePlayerUI(0);
-```
