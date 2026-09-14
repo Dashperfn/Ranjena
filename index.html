@@ -12,8 +12,8 @@
 </head>
 
 <body>
-    
-    <audio id="bg-music">
+
+    <audio id="bg-music" preload="auto">
         <source src="Something.mp3" type="audio/mpeg">
     </audio>
 
@@ -89,7 +89,6 @@
 
             </div>
 
-
             <div class="progress-wrapper">
 
                 <input
@@ -114,14 +113,31 @@
 
             </div>
 
-
             <div class="controls">
 
-                <span
+                <button
+                    class="music-control"
+                    id="prev-btn"
+                    onclick="previousSong()"
+                    aria-label="Previous song">
+                    ‹
+                </button>
+
+                <button
+                    class="music-control play-control"
                     id="play-pause-btn"
-                    onclick="toggleMusic()">
+                    onclick="toggleMusic()"
+                    aria-label="Play or pause">
                     ▶
-                </span>
+                </button>
+
+                <button
+                    class="music-control"
+                    id="next-btn"
+                    onclick="nextSong()"
+                    aria-label="Next song">
+                    ›
+                </button>
 
             </div>
 
@@ -190,7 +206,6 @@
                 klik cover/icon buat ganti lagu
             </p>
 
-
             <div class="playlist-grid">
 
                 <div
@@ -234,7 +249,7 @@
                         alt="Count on Me">
 
                     <p class="photo-caption">
-                        Count on Me
+                        Count On Me
                     </p>
 
                     <p
@@ -274,7 +289,6 @@
 
                 </div>
 
-
             </div>
 
             <button
@@ -296,7 +310,6 @@
                 Ranjena.
             </h2>
 
-
             <p class="text-body">
 
                 The way you sing, the way you care,
@@ -316,7 +329,6 @@
 
             </p>
 
-
             <p
                 class="serif"
                 style="
@@ -327,7 +339,7 @@
                 ">
                 - Kara -
             </p>
-            
+
             <button
                 class="next-btn"
                 onclick="nextSection(this)">
@@ -345,7 +357,6 @@
             <h2 class="title-sub serif">
                 Ranjena
             </h2>
-
 
             <div
                 style="
@@ -385,7 +396,6 @@
                 🎵
             </button>
 
-
             <p
                 class="text-body"
                 style="
@@ -396,7 +406,7 @@
             </p>
 
         </section>
-        
+
         <section>
 
             <div
@@ -408,16 +418,13 @@
                 🌸🌺🌹
             </div>
 
-
             <p class="subtitle">
                 always & forever
             </p>
 
-
             <h1 class="title-sub serif">
                 Be my Fambest
             </h1>
-
 
             <p
                 class="text-body"
@@ -431,7 +438,6 @@
                 You deserve everything.
 
             </p>
-
 
             <p
                 class="serif"
@@ -447,7 +453,6 @@
             </p>
 
         </section>
-
 
     </div>
 
