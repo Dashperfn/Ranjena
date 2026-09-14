@@ -35,20 +35,6 @@ function changeSong(songSrc, songTitle, songArtist, coverSrc) {
   playPauseBtn.textContent = '⏸';
 }
 
-function nextSong() {
-  currentSongIndex++;
-  if (currentSongIndex >= playlist.length) currentSongIndex = 0;
-  let next = playlist[currentSongIndex];
-  changeSong(next.src, next.title, next.artist, next.cover);
-}
-
-function prevSong() {
-  currentSongIndex--;
-  if (currentSongIndex < 0) currentSongIndex = playlist.length - 1;
-  let prev = playlist[currentSongIndex];
-  changeSong(prev.src, prev.title, prev.artist, prev.cover);
-}
-
 function formatTime(seconds) {
   let min = Math.floor(seconds / 60);
   let sec = Math.floor(seconds % 60);
