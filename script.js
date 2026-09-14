@@ -1,4 +1,3 @@
-// Audio player setup
 const audio = document.getElementById('bg-music');
 const playPauseBtn = document.getElementById('play-pause-btn');
 const seekBar = document.getElementById('seek-bar');
@@ -13,7 +12,6 @@ const playlist = [
 
 let currentSongIndex = 0;
 
-// Toggle play/pause
 function toggleMusic() {
   if (audio.paused) {
     audio.play();
@@ -24,22 +22,19 @@ function toggleMusic() {
   }
 }
 
-// Change song
 function changeSong(songSrc, songTitle, songArtist, coverSrc) {
   audio.src = songSrc;
-  document.getElementById('player-title').innerText = songTitle;
-  document.getElementById('player-artist').innerText = songArtist;
-  const coverEl = document.getElementById('player-cover');
-  if (coverEl) coverEl.src = coverSrc;
+  document.getElementById('player-title').textContent = songTitle;
+  document.getElementById('player-artist').textContent = songArtist;
+  document.getElementById('player-cover').src = coverSrc;
 
   const foundIndex = playlist.findIndex(song => song.src === songSrc);
   if (foundIndex !== -1) currentSongIndex = foundIndex;
 
   audio.play();
-  playPauseBtn.innerText = '⏸';
+  playPauseBtn.textContent = '⏸';
 }
 
-// Next/Prev
 function nextSong() {
   currentSongIndex++;
   if (currentSongIndex >= playlist.length) currentSongIndex = 0;
@@ -54,7 +49,6 @@ function prevSong() {
   changeSong(prev.src, prev.title, prev.artist, prev.cover);
 }
 
-// Format time
 function formatTime(seconds) {
   let min = Math.floor(seconds / 60);
   let sec = Math.floor(seconds % 60);
@@ -62,7 +56,6 @@ function formatTime(seconds) {
   return `${min}:${sec}`;
 }
 
-// Seek bar
 if (seekBar) {
   seekBar.addEventListener('input', () => {
     const seekTime = (seekBar.value / 100) * audio.duration;
@@ -70,7 +63,6 @@ if (seekBar) {
   });
 }
 
-// Update time/progress
 audio.addEventListener('timeupdate', () => {
   if (audio.duration) {
     if (seekBar) {
@@ -90,7 +82,6 @@ audio.addEventListener('pause', () => playPauseBtn.innerText = '▶');
 audio.addEventListener('play', () => playPauseBtn.innerText = '⏸');
 audio.addEventListener('ended', nextSong);
 
-// Kelopak bunga jatuh
 const petalsContainer = document.getElementById('petals-container');
 if (petalsContainer) {
   for (let i = 0; i < 35; i++) {
@@ -106,7 +97,6 @@ if (petalsContainer) {
   }
 }
 
-// Burst emoji
 function createBurst() {
   const emojis = ['🌸', '🌺', '🌹', '✨', '💖'];
   const container = document.getElementById('cover-screen');
@@ -128,7 +118,6 @@ function createBurst() {
   }
 }
 
-// Popup & gift
 let isGiftOpened = false;
 const popupOverlay = document.getElementById('popup-overlay');
 const popupBox = document.getElementById('popup-box');
@@ -201,7 +190,6 @@ function executeOpenGift() {
   }
 }
 
-// Scroll ke section berikut
 function nextSection(btn) {
   const currentSection = btn.closest('section');
   const nextSec = currentSection.nextElementSibling;
@@ -210,7 +198,6 @@ function nextSection(btn) {
   }
 }
 
-// Observer animasi section
 const observerOptions = { root: null, rootMargin: '0px', threshold: 0.2 };
 const sectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
