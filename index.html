@@ -12,17 +12,13 @@
 </head>
 
 <body>
-
-    <!-- MUSIC -->
+    
     <audio id="bg-music">
         <source src="Something.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- FALLING PETALS -->
     <div class="petals" id="petals-container"></div>
 
-
-    <!-- COVER SCREEN -->
     <div id="cover-screen">
 
         <div class="gift-box" id="gift-icon">
@@ -35,8 +31,6 @@
 
     </div>
 
-
-    <!-- POPUP -->
     <div id="popup-overlay">
 
         <div id="popup-box">
@@ -66,12 +60,8 @@
 
     </div>
 
-
-    <!-- MAIN CONTENT -->
     <div id="main-content">
 
-
-        <!-- MUSIC PLAYER -->
         <div class="music-widget">
 
             <div class="music-top">
@@ -137,9 +127,6 @@
 
         </div>
 
-
-
-        <!-- HERO -->
         <section class="hero-section">
 
             <p class="subtitle">
@@ -156,7 +143,16 @@
 
             <img
                 src="Ranjena1.jpg"
-                alt="Portrait of Ranjena">
+                alt="Portrait of Ranjena"
+                style="
+                    width:160px;
+                    height:160px;
+                    object-fit:cover;
+                    border-radius:50%;
+                    border:3px solid rgba(255,255,255,0.2);
+                    box-shadow:0 0 25px rgba(229,115,115,0.4);
+                    margin-bottom:25px;
+                ">
 
             <p
                 class="text-body"
@@ -164,7 +160,11 @@
                 Setiap kelopak bunga adalah betapa berharganya lu.
             </p>
 
-            <div class="flower-icon">
+            <div
+                style="
+                    font-size:24px;
+                    margin-top:20px;
+                ">
                 🌸
             </div>
 
@@ -176,9 +176,6 @@
 
         </section>
 
-
-
-        <!-- PLAYLIST -->
         <section>
 
             <p class="subtitle">
@@ -195,7 +192,6 @@
 
 
             <div class="playlist-grid">
-
 
                 <div
                     class="photo-item"
@@ -214,13 +210,15 @@
                         Something
                     </p>
 
-                    <p class="artist-caption">
+                    <p
+                        style="
+                            font-size:11px;
+                            color:var(--text-muted);
+                        ">
                         The Beatles
                     </p>
 
                 </div>
-
-
 
                 <div
                     class="photo-item"
@@ -239,13 +237,15 @@
                         Count on Me
                     </p>
 
-                    <p class="artist-caption">
+                    <p
+                        style="
+                            font-size:11px;
+                            color:var(--text-muted);
+                        ">
                         Bruno Mars
                     </p>
 
                 </div>
-
-
 
                 <div
                     class="photo-item"
@@ -264,7 +264,11 @@
                         More Than A Woman
                     </p>
 
-                    <p class="artist-caption">
+                    <p
+                        style="
+                            font-size:11px;
+                            color:var(--text-muted);
+                        ">
                         Bee Gees
                     </p>
 
@@ -272,7 +276,6 @@
 
 
             </div>
-
 
             <button
                 class="next-btn"
@@ -282,9 +285,6 @@
 
         </section>
 
-
-
-        <!-- FROM MY HEART -->
         <section>
 
             <p class="subtitle">
@@ -299,8 +299,10 @@
 
             <p class="text-body">
 
-                The way you sing, the way you care, the way you simply exist —
-                it fills every corner of my world with something I never knew I needed.
+                The way you sing, the way you care,
+                the way you simply exist — it fills every
+                corner of my world with something I never
+                knew I needed.
 
                 <br><br>
 
@@ -316,11 +318,16 @@
 
 
             <p
-                class="serif signature">
+                class="serif"
+                style="
+                    margin-top:40px;
+                    font-style:italic;
+                    font-size:24px;
+                    color:var(--text-muted);
+                ">
                 - Kara -
             </p>
-
-
+            
             <button
                 class="next-btn"
                 onclick="nextSection(this)">
@@ -329,9 +336,6 @@
 
         </section>
 
-
-
-        <!-- LETTER -->
         <section>
 
             <p class="subtitle">
@@ -343,20 +347,37 @@
             </h2>
 
 
-            <div class="letter-box">
+            <div
+                style="
+                    background:rgba(255,255,255,0.03);
+                    border-left:3px solid var(--accent);
+                    padding:30px 40px;
+                    margin-top:20px;
+                    max-width:600px;
+                    border-radius:0 15px 15px 0;
+                    box-shadow:5px 5px 20px rgba(0,0,0,0.2);
+                ">
 
-                <p class="serif letter-text">
+                <p
+                    class="serif"
+                    style="
+                        font-size:24px;
+                        font-style:italic;
+                        line-height:1.8;
+                        color:#fff;
+                    ">
 
-                    "Semoga sehat selalu, happy selalu, lancar harinya.
-                    sorry gua gak bisa kasih lu something yang mahal or anything,
+                    "Semoga sehat selalu, happy selalu,
+                    lancar harinya. sorry gua gak bisa kasih
+                    lu something yang mahal or anything,
                     but you're my best fambest i ever have in rp,
                     thanks for anything Ranjena.
-                    Once again sorry idk how to tell you gak bisa berkata kata gua"
+                    Once again sorry idk how to tell you
+                    gak bisa berkata kata gua"
 
                 </p>
 
             </div>
-
 
             <button
                 class="next-btn"
@@ -366,30 +387,44 @@
 
 
             <p
-                class="text-body last-ran">
+                class="text-body"
+                style="
+                    font-size:14px;
+                    margin-top:25px;
+                ">
                 Last Ran.
             </p>
 
         </section>
-
-
-
-        <!-- FINAL -->
+        
         <section>
 
-            <div class="final-flowers">
+            <div
+                style="
+                    font-size:28px;
+                    letter-spacing:10px;
+                    margin-bottom:20px;
+                ">
                 🌸🌺🌹
             </div>
+
 
             <p class="subtitle">
                 always & forever
             </p>
 
+
             <h1 class="title-sub serif">
                 Be my Fambest
             </h1>
 
-            <p class="text-body final-text">
+
+            <p
+                class="text-body"
+                style="
+                    font-size:14px;
+                    max-width:600px;
+                ">
 
                 You deserve the world.
                 You deserve all the flowers.
@@ -398,7 +433,14 @@
             </p>
 
 
-            <p class="serif final-signature">
+            <p
+                class="serif"
+                style="
+                    margin-top:50px;
+                    font-style:italic;
+                    color:var(--text-muted);
+                    font-size:18px;
+                ">
 
                 - Kara not Ferry?
 
@@ -408,7 +450,6 @@
 
 
     </div>
-
 
     <script src="script.js"></script>
 
